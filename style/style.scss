@@ -1,0 +1,182 @@
+@mixin flex($direction, $justify, $items) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $items;
+}
+
+$colors: (
+    very-dark-magenta: hsl(300, 43%, 22%),
+    soft-pink: hsl(333, 80%, 67%),
+    dark-grayish-magenta: hsl(303, 10%, 53%),
+    light-grayish-magenta: hsl(300, 24%, 96%),
+    w_hite: hsl(0, 0%, 100%),
+);
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    @include flex(row, center, center);
+
+    .left-backgroundImage {
+        position: absolute;
+        background-image: url("../images/bg-pattern-top-desktop.svg");
+
+        width: 584px;
+        height: 362px;
+
+        top: 0;
+        left: -30px;
+    }
+
+    .right-backgroundImage {
+        position: absolute;
+        background-image: url("../images/bg-pattern-bottom-desktop.svg");
+
+        width: 1085px;
+        height: 673px;
+
+        bottom: -30px;
+        right: 0px;
+    }
+}
+
+main {
+    width: 77%;
+    height: 70%;
+}
+
+.top {
+    width: 100%;
+    height: 50%;
+    @include flex(row, space-between, flex-start);
+
+    .top-right-side {
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+
+        h1 {
+            font-family: "League Spartan", sans-serif;
+            font-weight: 700;
+            width: 330px;
+            font-size: 50px;
+            color: map-get($colors, very-dark-magenta);
+        }
+
+        p {
+            max-width: 400px;
+            font-family: "League Spartan", sans-serif;
+            font-weight: 500;
+            font-size: 17px;
+
+            margin-top: 25px;
+            line-height: 20px;
+            text-overflow: ellipsis;
+
+            color: map-get($colors, dark-grayish-magenta);
+        }
+    }
+
+    .top-left-side {
+        //border: 1px solid red;
+        width: 50%;
+        height: 100%;
+
+        .item2 {
+            margin-left: 40px;
+        }
+
+        .item3 {
+            margin-left: 80px;
+        }
+
+        .rating-item {
+            margin-top: 20px;
+            width: 430px;
+            height: 50px;
+            border-radius: 5px;
+            background-color: map-get($colors, light-grayish-magenta);
+
+            .rating-item-content {
+                width: 85%;
+                height: 100%;
+                @include flex(row, flex-start, center);
+                gap: 40px;
+                margin: auto;
+            }
+
+            p {
+                font-family: "League Spartan", sans-serif;
+                font-weight: bold;
+                color: map-get($colors, very-dark-magenta);
+            }
+        }
+    }
+}
+
+.bottom {
+    width: 100%;
+    height: 50%;
+    margin-top: 20px;
+    @include flex(row, space-between, flex-start);
+
+    .testimonial {
+        background-color: map-get($colors, very-dark-magenta);
+        border-radius: 10px;
+
+        width: 335px;
+        height: 225px;
+
+        padding: 35px;
+
+        .testimonial-header {
+            font-family: "League Spartan", sans-serif;
+            @include flex(row, flex-start, center);
+
+            img {
+                width: 40px;
+                border-radius: 100%;
+            }
+
+            div {
+                margin-left: 20px;
+
+                .testimonial-name {
+                    color: map-get($colors, w_hite);
+                    font-weight: 700;
+                }
+                .testimonial-status {
+                    color: map-get($colors, soft-pink);
+                }
+            }
+        }
+
+        .testimonial-content {
+            max-width: 265px;
+            margin-top: 20px;
+
+            p {
+                color: map-get($colors, light-grayish-magenta);
+                line-height: 23px;
+            }
+        }
+    }
+
+    .testimonial-2 {
+        margin-top: 20px;
+    }
+
+    .testimonial-3 {
+        margin-top: 40px;
+    }
+}
+
+@import "./mobile";
