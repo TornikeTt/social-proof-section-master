@@ -152,12 +152,11 @@ main {
 
 @media (max-width: 375px) {
   body {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    height: auto;
+    overflow: auto;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
   }
   body .left-backgroundImage {
@@ -173,6 +172,76 @@ main {
     height: 503px;
     bottom: 0;
     right: 0;
+  }
+  main {
+    width: 90%;
+    height: 100%;
+  }
+  .top {
+    height: auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .top .top-right-side {
+    width: 100%;
+    height: auto;
+  }
+  .top .top-right-side h1 {
+    text-align: center;
+    font-size: 35px;
+    width: 230px;
+    margin: auto;
+  }
+  .top .top-right-side p {
+    text-align: center;
+    max-width: 300px;
+    margin: auto;
+    margin-top: 25px;
+  }
+  .top .top-left-side {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+  .top .top-left-side .item2,
+  .top .top-left-side .item3 {
+    margin-left: 0px;
+  }
+  .top .top-left-side .rating-item {
+    width: 100%;
+    height: 70px;
+  }
+  .top .top-left-side .rating-item .rating-item-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .bottom {
+    width: 100%;
+    height: 750px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+  .bottom .testimonial {
+    width: 100%;
+  }
+  .bottom .testimonial .testimonial-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .bottom .testimonial-2,
+  .bottom .testimonial-3 {
+    margin-top: 0px;
   }
 }
 
